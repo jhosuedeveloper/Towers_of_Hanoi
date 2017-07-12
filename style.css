@@ -1,7 +1,19 @@
 /*General rules----------------------------------------------------------*/
 body
 {
-  background-color: lemonchiffon;
+  /*background-color: lemonchiffon;*/
+
+  background-image: url("oUMTTo6.gif");
+  background-size: cover;
+  bottom: 0px
+  top: 20px;
+}
+
+html{
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  z-index: 2;
 }
 
 
@@ -11,9 +23,23 @@ header
   font-family: 'Gloria Hallelujah', cursive, sans-serif;
   text-align: center;
   font-size: 24pt;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1px;
+
+
+
+
+
 }
 /*MAIN----------------------------------------------------------------*/
-
+main{
+    background-image: url("oUMTTo6.gif");
+    background-size: cover;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
 
 /*FOOTER----------------------------------------------------------------*/
 footer
