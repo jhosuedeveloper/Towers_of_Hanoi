@@ -8,16 +8,24 @@
 
 class DiskStacks
 {
-  constructor(numDisks)//constructor
+  constructor()//constructor
   {
-    this.numDisks = numDisks;
+    this.numDisks;
     this.posting = [[], [], [] ] // the 3 stacks of disks
 
+
+  }
+
+  initialize(numDisks)
+  {
+    this.numDisks = numDisks;
     for(var i =0; i<numDisks; i++)
     {
       this.posting[0].push(numDisks-i);
     }
   }
+
+
 
 
 
@@ -80,8 +88,14 @@ class DiskStacks
   }
 
 
+  emptyStack()
+  {
+    this.posting = [[], [], [] ]
+  }
+
+
 
 }//end DiskStacks class
 
 
-var x = new DiskStacks(3);
+var x = new DiskStacks();
