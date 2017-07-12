@@ -1,0 +1,23 @@
+/*General rules----------------------------------------------------------*/
+body
+{
+  background-color: lemonchiffon;
+}
+
+
+/*HEADER----------------------------------------------------------------*/
+header
+{
+  font-family: 'Gloria Hallelujah', cursive, sans-serif;
+  text-align: center;
+  font-size: 24pt;
+}
+/*MAIN----------------------------------------------------------------*/
+
+
+/*FOOTER----------------------------------------------------------------*/
+footer
+{
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}

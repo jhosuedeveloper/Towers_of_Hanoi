@@ -18,7 +18,7 @@ class DiskStacks
       this.posting[0].push(numDisks-i);
     }
   }
-  
+
 
 
   //Method Name : move
