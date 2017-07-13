@@ -153,8 +153,9 @@ class DiskStacksView
     }
 
 
-    if( this.stacksModel.validity==false )
+    if( this.stacksModel.validity===false )
     {
+      $('.loosex').remove();
       $('#inputinfo').append(`<div class="loosex">INVALID MOVE</div>`)
     }
     else
