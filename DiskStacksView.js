@@ -1,9 +1,21 @@
-/* glabal $ script.js */
-class DiskStacksView {
-  constructor (stacksModel) {
+//class:       DiskStacksView
+//Description: renders with the DiskStacks class model to render into the DOM
+//Date:        July 17th, 2017
+//Author:      Josue Rosales
+/* global $ DiskStacksView.js DiskStacks.js */
+
+class DiskStacksView
+{
+  constructor (stacksModel)
+  {
     this.stacksModel = stacksModel;
   }//end of constructor
 
+
+  //Method Name : init
+  //input       : none
+  //ouput       : none
+  //description: initializes everything, and kicks the game to start
   init()
   {
 
@@ -26,7 +38,10 @@ class DiskStacksView {
 
   }//end of init
 
-
+  //Method Name : listens
+  //input       : none
+  //ouput       : none
+  //description : It is listening to the button, inputtext and  clicks on the stacks
   listens()
   {
     this.buttonGo.on('click', this.startModel.bind(this) );
@@ -37,39 +52,56 @@ class DiskStacksView {
   }
 
 
-
-stk1()
-{
-  this.movesHistory.push(1);
-  if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
+  //Method Name : skt1
+  //input       : none
+  //ouput       : none
+  //description : prints first stack into the DOM
+  stk1()
   {
-  this.stacksModel.move(this.movesHistory[this.movesHistory.length-2], this.movesHistory[this.movesHistory.length-1]);
-  this.continueGame();
+    this.movesHistory.push(1);
+    if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
+    {
+      this.stacksModel.move(this.movesHistory[this.movesHistory.length-2], this.movesHistory[this.movesHistory.length-1]);
+      this.continueGame();
+    }
   }
-}
-stk2()
-{
-  this.movesHistory.push(2);
-  if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
+
+  //Method Name : skt2
+  //input       : none
+  //ouput       : none
+  //description : prints second stack into the DOM
+  stk2()
   {
-  this.stacksModel.move(this.movesHistory[this.movesHistory.length-2], this.movesHistory[this.movesHistory.length-1]);
-  this.continueGame();
+    this.movesHistory.push(2);
+    if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
+    {
+      this.stacksModel.move(this.movesHistory[this.movesHistory.length-2], this.movesHistory[this.movesHistory.length-1]);
+      this.continueGame();
+    }
   }
-}
-stk3()
-{
-  this.movesHistory.push(3);
-  if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
+
+
+  //Method Name : skt3
+  //input       : none
+  //ouput       : none
+  //description : prints third stack into the DOM
+  stk3()
   {
-    // var origin =this.movesHistory[this.movesHistory.length-2]
-    // var destiny =
-  this.stacksModel.move(this.movesHistory[this.movesHistory.length-2], this.movesHistory[this.movesHistory.length-1]);
-  this.continueGame();
+    this.movesHistory.push(3);
+    if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
+    {
+      // var origin =this.movesHistory[this.movesHistory.length-2]
+      // var destiny =
+      this.stacksModel.move(this.movesHistory[this.movesHistory.length-2], this.movesHistory[this.movesHistory.length-1]);
+      this.continueGame();
+    }
   }
-}
 
 
-
+  //Method Name : startModel
+  //input       : none
+  //ouput       : none
+  //description : initializes the field of stacks to the specipied user input
   startModel()
   {
     this.stacksModel.emptyStack();
@@ -84,7 +116,10 @@ stk3()
     this.render();
   }
 
-
+  //Method Name : continueGame
+  //input       : none
+  //ouput       : none
+  //description : this is a helper method for printing the stacks inthe DOM, after teh first move.
   continueGame()
   {
 
@@ -96,7 +131,10 @@ stk3()
 
 
 
-
+  //Method Name : render
+  //input       : none
+  //ouput       : none
+  //description : displays stacks into the DOM
   render()
   {
     this.renderStack1();
@@ -106,7 +144,10 @@ stk3()
   }
 
 
-
+  //Method Name : renderStack1
+  //input       : none
+  //ouput       : none
+  //description : prints first stack into the DOM
   renderStack1()
   {
 
@@ -122,7 +163,10 @@ stk3()
   }//renderStack1
 
 
-
+  //Method Name : renderStack2
+  //input       : none
+  //ouput       : none
+  //description : prints second stack into the DOM
   renderStack2()
   {
     this.stacksModel.posting[1].forEach((info) => {
@@ -131,38 +175,19 @@ stk3()
 
   }//renderStack2
 
+
+
+  //Method Name : renderStack3
+  //input       : none
+  //ouput       : none
+  //description : prints third stack into the DOM
   renderStack3()
   {
     this.stacksModel.posting[2].forEach((info) => {
       this.stack3.prepend(`<div class="stk${info}"></div>`)
     })
 
-  }//renderStack2
+  }//renderStack3
 
 
 }//end of class DiskStacksView
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$(document).ready(function () {
-  const stackModel = new DiskStacks();
-  const stackView = new DiskStacksView(stackModel);
-  stackView.init();
-})
