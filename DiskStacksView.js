@@ -110,7 +110,8 @@ class DiskStacksView
     this.stack2.empty();
     this.stack3.empty();
     this.movesHistory = [];
-
+    this.stacksModel.validity=true;
+  
 
     var num = parseInt(this.inputText.val());
     this.stacksModel.initialize(num);
