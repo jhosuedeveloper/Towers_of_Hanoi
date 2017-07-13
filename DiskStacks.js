@@ -12,6 +12,7 @@ class DiskStacks
   {
     this.numDisks;
     this.posting = [[], [], [] ] // the 3 stacks of disks
+    this.validity=true;
 
 
   }
@@ -37,10 +38,12 @@ class DiskStacks
     {
       this.posting[destination-1].push(this.posting[origin-1][this.posting[origin-1].length-1]);
       this.posting[origin-1].pop();
+      this.validity=true;
     }
     else
     {
-      alert('Move is not possible, either there are no disks at the origin stack, or the size of disk you are trying to put on top is greater than the bottom');
+      // alert('Move is not possible, either there are no disks at the origin stack, or the size of disk you are trying to put on top is greater than the bottom');
+      this.validity=false;
     }
   }
 

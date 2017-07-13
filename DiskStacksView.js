@@ -63,6 +63,7 @@ class DiskStacksView
     {
       this.stacksModel.move(this.movesHistory[this.movesHistory.length-2], this.movesHistory[this.movesHistory.length-1]);
       this.continueGame();
+
     }
   }
 
@@ -140,6 +141,29 @@ class DiskStacksView
     this.renderStack1();
     this.renderStack2();
     this.renderStack3();
+    if(this.stacksModel.checkWin() === true )
+    {
+      if(this.movesHistory.length%2===0)
+      if(this.movesHistory[this.movesHistory.length-2]!==this.movesHistory[this.movesHistory.length-1])
+      $('#inputinfo').append(`<div class="winx">COMPLETE</div>`)
+    }
+    else
+    {
+     $('.winx').remove();
+    }
+
+
+    if( this.stacksModel.validity==false )
+    {
+      $('#inputinfo').append(`<div class="loosex">INVALID MOVE</div>`)
+    }
+    else
+    {
+     $('.loosex').remove();
+    }
+
+
+
 
   }
 
@@ -157,7 +181,7 @@ class DiskStacksView
     // }.bind(this))
 
     this.stacksModel.posting[0].forEach((info) => {
-      this.stack1.prepend(`<div class="stk${info}"></div>`)
+      this.stack1.append(`<div class="stk${info}"></div>`)
     })
 
   }//renderStack1
@@ -170,7 +194,7 @@ class DiskStacksView
   renderStack2()
   {
     this.stacksModel.posting[1].forEach((info) => {
-      this.stack2.prepend(`<div class="stk${info}"></div>`)
+      this.stack2.append(`<div class="stk${info}"></div>`)
     })
 
   }//renderStack2
@@ -184,7 +208,7 @@ class DiskStacksView
   renderStack3()
   {
     this.stacksModel.posting[2].forEach((info) => {
-      this.stack3.prepend(`<div class="stk${info}"></div>`)
+      this.stack3.append(`<div class="stk${info}"></div>`)
     })
 
   }//renderStack3
