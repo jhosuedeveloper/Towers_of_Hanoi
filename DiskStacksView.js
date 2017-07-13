@@ -111,7 +111,7 @@ class DiskStacksView
     this.stack3.empty();
     this.movesHistory = [];
     this.stacksModel.validity=true;
-  
+
 
     var num = parseInt(this.inputText.val());
     this.stacksModel.initialize(num);
@@ -146,7 +146,10 @@ class DiskStacksView
     {
       if(this.movesHistory.length%2===0)
       if(this.movesHistory[this.movesHistory.length-2]!==this.movesHistory[this.movesHistory.length-1])
+      {
+       $('.winx').remove();
       $('#inputinfo').append(`<div class="winx">COMPLETE</div>`)
+      }
     }
     else
     {
