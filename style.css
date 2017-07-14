@@ -268,3 +268,20 @@ footer
   font-size: 50px;
 
 }
+
+
+.scorex
+{
+  width: 500px;
+  height: 70px;
+  background: #E8E720;
+  border-radius: 20px;
+  line-height: 70px;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  color: white;
+  margin-left: 30px;
+  margin-top: 0px;
+  font-size: 50px;
+
+}

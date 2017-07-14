@@ -9,6 +9,9 @@ class DiskStacksView
   constructor (stacksModel)
   {
     this.stacksModel = stacksModel;
+    this.startTime=0;
+    this.score=0;
+
   }//end of constructor
 
 
@@ -113,6 +116,7 @@ class DiskStacksView
     this.stacksModel.validity=true;
 
 
+    this.startTime =  new Date();
     var num = parseInt(this.inputText.val());
     this.stacksModel.initialize(num);
     this.render();
@@ -149,15 +153,20 @@ class DiskStacksView
       {
        $('.winx').remove();
       $('#inputinfo').append(`<div class="winx">COMPLETE</div>`)
+      this.score = new Date() - this.startTime;
+      $('.scorex').remove();
+     $('#inputinfo').append(`<div class="scorex">SCORE: ${this.score}</div>`)
+      sound.play();
       }
     }
     else
     {
      $('.winx').remove();
+     $('.scorex').remove();
     }
 
 
-    if( this.stacksModel.validity===false )
+    if( this.stacksModel.validity===false && this.stacksModel.checkWin()==false)
     {
       $('.loosex').remove();
       $('#inputinfo').append(`<div class="loosex">INVALID MOVE</div>`)
