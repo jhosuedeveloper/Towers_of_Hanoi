@@ -285,3 +285,31 @@ footer
   font-size: 50px;
 
 }
+
+
+.clicked
+{
+
+  display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse wrap;
+
+  align-items:   center;
+
+  margin: 40px;
+  padding: 20px;
+  border-right-width: thick;
+  border-right-style: solid;
+  border-right-color: black;
+
+  border-left-width: thick;
+  border-left-style: solid;
+  border-left-color: black;
+
+  border-bottom-width: thick;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  width: 400px;
+  height: 350px;
+  background: lemonchiffon;
+}

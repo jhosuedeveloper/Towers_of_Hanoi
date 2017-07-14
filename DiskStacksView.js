@@ -61,12 +61,25 @@ class DiskStacksView
   //description : prints first stack into the DOM
   stk1()
   {
+    this.stack1.removeClass('clicked')
+    this.stack2.removeClass('clicked')
+    this.stack3.removeClass('clicked')
+
+    this.stack1.addClass('clicked');
+
+
     this.movesHistory.push(1);
     if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
     {
       this.stacksModel.move(this.movesHistory[this.movesHistory.length-2], this.movesHistory[this.movesHistory.length-1]);
+      //this.stack1.removeClass('clicked');
+      this.stack1.addClass('clicked');
+
+
+
       this.continueGame();
 
+      ;
     }
   }
 
@@ -76,6 +89,11 @@ class DiskStacksView
   //description : prints second stack into the DOM
   stk2()
   {
+    this.stack1.removeClass('clicked')
+    this.stack2.removeClass('clicked')
+    this.stack3.removeClass('clicked')
+
+    this.stack2.addClass('clicked');
     this.movesHistory.push(2);
     if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
     {
@@ -91,6 +109,11 @@ class DiskStacksView
   //description : prints third stack into the DOM
   stk3()
   {
+    this.stack1.removeClass('clicked')
+    this.stack2.removeClass('clicked')
+    this.stack3.removeClass('clicked')
+
+    this.stack3.addClass('clicked');
     this.movesHistory.push(3);
     if(this.movesHistory.length%2==0 && this.movesHistory.length !== undefined && this.movesHistory.length !== null )
     {
@@ -133,6 +156,7 @@ class DiskStacksView
     this.stack2.empty();
     this.stack3.empty();
     this.render();
+
   }
 
 
@@ -156,7 +180,7 @@ class DiskStacksView
       this.score = new Date() - this.startTime;
       $('.scorex').remove();
      $('#inputinfo').append(`<div class="scorex">SCORE: ${this.score}</div>`)
-     console.log('i am heer ')
+
       this.sound[0].play();
       }
     }
