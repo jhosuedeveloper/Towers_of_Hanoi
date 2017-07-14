@@ -138,6 +138,10 @@ class DiskStacksView
     this.movesHistory = [];
     this.stacksModel.validity=true;
 
+    this.stack1.removeClass('clicked')
+    this.stack2.removeClass('clicked')
+    this.stack3.removeClass('clicked')
+
 
     this.startTime =  new Date();
     var num = parseInt(this.inputText.val());
