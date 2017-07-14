@@ -25,7 +25,7 @@ class DiskStacksView
     //inputs
     this.buttonGo = $('button');
     this.inputText = $('#inputtxt');
-
+    this.sound = $('#sound')
     //ouputs
     this.stack1 = $('.stack1');
     this.stack2 = $('.stack2');
@@ -156,7 +156,8 @@ class DiskStacksView
       this.score = new Date() - this.startTime;
       $('.scorex').remove();
      $('#inputinfo').append(`<div class="scorex">SCORE: ${this.score}</div>`)
-      sound.play();
+     console.log('i am heer ')
+      this.sound[0].play();
       }
     }
     else
